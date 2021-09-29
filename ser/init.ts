@@ -54,7 +54,7 @@ function randomzier(texts: string[]) {
 app.set("view engine", "ejs");
 
 app.get("/", (req: Request, res: Response) => {
-    getRandomArticle(option, (e, text) => {
+    getRandomArticle(option, (e: Error, text: string) => {
         if (e) console.log(e);
         res.render("index", {
             text: randomzier(redizer(getText(text)))
