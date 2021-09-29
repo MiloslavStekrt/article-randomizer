@@ -1,10 +1,10 @@
 import express, { Request, Response, text } from "express";
-
+require("dotenv").config()
 
 const getRandomArticle = require("get-random-article")
 const option = {language: 'cz'}
 const app: express.Application = express();
-const PORT: number = 3103;
+const PORT: number = +(process.env.PORT || 3103);
 const SERVER: string = "http://localhost";
 const banwords: string[] = [
     "of", "working", "johncommons", "commons", "viz", "legal", "college", "http", "de", "georges", "et",
